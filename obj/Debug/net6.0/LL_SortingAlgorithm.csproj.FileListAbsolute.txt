@@ -1,0 +1,15 @@
+\\10.4.33.2\GAME_Studentdata\LL_0923_TempProject\LL_SortingAlgorithm\bin\Debug\net6.0\LL_SortingAlgorithm.exe
+\\10.4.33.2\GAME_Studentdata\LL_0923_TempProject\LL_SortingAlgorithm\bin\Debug\net6.0\LL_SortingAlgorithm.deps.json
+\\10.4.33.2\GAME_Studentdata\LL_0923_TempProject\LL_SortingAlgorithm\bin\Debug\net6.0\LL_SortingAlgorithm.runtimeconfig.json
+\\10.4.33.2\GAME_Studentdata\LL_0923_TempProject\LL_SortingAlgorithm\bin\Debug\net6.0\LL_SortingAlgorithm.dll
+\\10.4.33.2\GAME_Studentdata\LL_0923_TempProject\LL_SortingAlgorithm\bin\Debug\net6.0\LL_SortingAlgorithm.pdb
+\\10.4.33.2\GAME_Studentdata\LL_0923_TempProject\LL_SortingAlgorithm\obj\Debug\net6.0\LL_SortingAlgorithm.csproj.AssemblyReference.cache
+\\10.4.33.2\GAME_Studentdata\LL_0923_TempProject\LL_SortingAlgorithm\obj\Debug\net6.0\LL_SortingAlgorithm.GeneratedMSBuildEditorConfig.editorconfig
+\\10.4.33.2\GAME_Studentdata\LL_0923_TempProject\LL_SortingAlgorithm\obj\Debug\net6.0\LL_SortingAlgorithm.AssemblyInfoInputs.cache
+\\10.4.33.2\GAME_Studentdata\LL_0923_TempProject\LL_SortingAlgorithm\obj\Debug\net6.0\LL_SortingAlgorithm.AssemblyInfo.cs
+\\10.4.33.2\GAME_Studentdata\LL_0923_TempProject\LL_SortingAlgorithm\obj\Debug\net6.0\LL_SortingAlgorithm.csproj.CoreCompileInputs.cache
+\\10.4.33.2\GAME_Studentdata\LL_0923_TempProject\LL_SortingAlgorithm\obj\Debug\net6.0\LL_SortingAlgorithm.dll
+\\10.4.33.2\GAME_Studentdata\LL_0923_TempProject\LL_SortingAlgorithm\obj\Debug\net6.0\refint\LL_SortingAlgorithm.dll
+\\10.4.33.2\GAME_Studentdata\LL_0923_TempProject\LL_SortingAlgorithm\obj\Debug\net6.0\LL_SortingAlgorithm.pdb
+\\10.4.33.2\GAME_Studentdata\LL_0923_TempProject\LL_SortingAlgorithm\obj\Debug\net6.0\LL_SortingAlgorithm.genruntimeconfig.cache
+\\10.4.33.2\GAME_Studentdata\LL_0923_TempProject\LL_SortingAlgorithm\obj\Debug\net6.0\ref\LL_SortingAlgorithm.dll
