@@ -2,48 +2,53 @@
 {
     internal class Quicksort
     {
-        public int[] QuickSort(int[] array, int left, int right)
+        public int[] QuickSort(int[] _array, int _left, int _right)
         {
-            if (left < right)
+            if (_left < _right)
             {
-                int pivot = Partition(array, left, right);
+                // create pivot point to use for sorting
+                int pivot = Partition(_array, _left, _right);
 
+                //uses current pivot point to sort either the left side or right side of pivot point
                 if (pivot > 1)
                 {
-                    QuickSort(array, left, pivot - 1);
+                    QuickSort(_array, _left, pivot - 1);
                 }
-                if (pivot + 1 < right)
+                if (pivot + 1 < _right)
                 {
-                    QuickSort(array, pivot + 1, right);
+                    QuickSort(_array, pivot + 1, _right);
                 }
             }
-            return array;
+            return _array;
         }
 
-        private int Partition(int[] array, int left, int right)
+        private int Partition(int[] _array, int _left, int _right)
         {
-            int pivot = array[left];
+            // set local pivot point for partitioning
+            int pivot = _array[_left];
             while (true)
             {
-                while (array[left] < pivot)
+                // change index depending on position towards pivot point
+                while (_array[_left] < pivot)
                 {
-                    left++;
+                    _left++;
                 }
-                while (array[right] > pivot)
+                while (_array[_right] > pivot)
                 {
-                    right--;
+                    _right--;
                 }
 
-                if (left < right)
+                if (_left < _right)
                 {
-                    if (array[left] == array[right]) return right;
-                    int temp = array[left];
-                    array[left] = array[right];
-                    array[right] = temp;
+                    // swap values if needed
+                    if (_array[_left] == _array[_right]) return _right;
+                    int temp = _array[_left];
+                    _array[_left] = _array[_right];
+                    _array[_right] = temp;
                 }
                 else
                 {
-                    return right;
+                    return _right;
                 }
             }
         }

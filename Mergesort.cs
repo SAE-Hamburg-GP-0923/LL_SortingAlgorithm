@@ -13,19 +13,23 @@ namespace LL_SortingAlgorithm
 
         }
 
-        public int[] MergeSort(int[] array)
+        public int[] MergeSort(int[] _array)
         {
+            // create left and right array
             int[] left;
             int[] right;
-            int[] result = new int[array.Length];
-            if (array.Length <= 1)
+            int[] result = new int[_array.Length];
+            // recursion safety cancel
+            if (_array.Length <= 1)
             {
-                return array;
+                return _array;
             }
-            int middle = array.Length / 2;
+            // define middle point by splitting array length
+            int middle = _array.Length / 2;
+            // define length of left and right, where right gets one more entry if the original length is an odd number
             left = new int[middle];
 
-            if (array.Length % 2 == 0)
+            if (_array.Length % 2 == 0)
             {
                 right = new int[middle];
             }
@@ -33,55 +37,62 @@ namespace LL_SortingAlgorithm
             {
                 right = new int[middle + 1];
             }
+            // fill left array
             for (int i = 0; i < middle; i++)
             {
-                left[i] = array[i];
+                left[i] = _array[i];
             }
+            // fill right array
             int x = 0;
-            for (int i = middle; i < array.Length; i++)
+            for (int i = middle; i < _array.Length; i++)
             {
-                right[x] = array[i];
+                right[x] = _array[i];
                 x++;
             }
+            // keep splitting and sorting till both left and right results are only one element
             left = MergeSort(left);
             right = MergeSort(right);
+            // merge all arrays back together
             result = MergeArrays(left, right);
             return result;
         }
 
-        private int[] MergeArrays(int[] left, int[] right)
+        private int[] MergeArrays(int[] _left, int[] _right)
         {
-            int resultLenght = left.Length + right.Length;
+            //define resulting length of the new array and create it
+            int resultLenght = _left.Length + _right.Length;
             int[] result = new int[resultLenght];
 
+            // set starting index
             int indexLeft = 0, indexRight = 0, indexResult = 0;
 
-            while (indexLeft < left.Length || indexRight < right.Length)
+            //lopp through the lenght of the arrays and merge, adding either the left or the right element depending on current index
+            while (indexLeft < _left.Length || indexRight < _right.Length)
             {
-                if (indexLeft < left.Length && indexRight < right.Length)
+                if (indexLeft < _left.Length && indexRight < _right.Length)
                 {
-                    if (left[indexLeft] <= right[indexRight])
+                    if (_left[indexLeft] <= _right[indexRight])
                     {
-                        result[indexResult] = left[indexLeft];
+                        result[indexResult] = _left[indexLeft];
                         indexLeft++;
                         indexResult++;
                     }
                     else
                     {
-                        result[indexResult] = right[indexRight];
+                        result[indexResult] = _right[indexRight];
                         indexRight++;
                         indexResult++;
                     }
                 }
-                else if (indexLeft < left.Length)
+                else if (indexLeft < _left.Length)
                 {
-                    result[indexResult] = left[indexLeft];
+                    result[indexResult] = _left[indexLeft];
                     indexLeft++;
                     indexResult++;
                 }
-                else if (indexRight < right.Length)
+                else if (indexRight < _right.Length)
                 {
-                    result[indexResult] = right[indexRight];
+                    result[indexResult] = _right[indexRight];
                     indexRight++;
                     indexResult++;
                 }

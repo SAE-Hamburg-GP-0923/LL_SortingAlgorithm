@@ -25,9 +25,11 @@ namespace LL_SortingAlgorithm
 
         public void Sort()
         {
+            // iterates through entire array aka outer loop
             for (int i = 0; i < arrayA.Length - 1; i++)
             {
                 swapNeeded = false;
+                // iterates and compares 2 values next to each other aka inner loop
                 for (int j = 0; j < arrayA.Length - i - 1; j++)
                 {
                     if (arrayA[j] > arrayA[j + 1])
@@ -38,6 +40,7 @@ namespace LL_SortingAlgorithm
                         swapNeeded = true;
                     }
                 }
+                //skips iteration if no swap is needed anymore
                 if (swapNeeded == false)
                     break;
             }
