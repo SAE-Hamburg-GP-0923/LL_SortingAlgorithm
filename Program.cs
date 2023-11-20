@@ -15,13 +15,21 @@
             9,
             2
         };
+
+        static int[] sortedArray;
         static void Main(string[] args)
         {
-            Quicksort quicksort = new Quicksort();
-            var sortedArray = quicksort.QuickSort(newArray, 0, newArray.Length - 1);
-            foreach (int i in sortedArray)
+            newArray.MergeSort();
+            newArray.Decending();
+            Print();
+            //PrintZigZag();
+        }
+
+        static void Print()
+        {
+            foreach (int i in newArray)
             {
-                Console.WriteLine(i + " ");
+                Console.Write(i + " ");
             }
         }
     }

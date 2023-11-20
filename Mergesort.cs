@@ -1,18 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LL_SortingAlgorithm
+﻿namespace LL_SortingAlgorithm
 {
     internal class Mergesort
     {
-        public Mergesort()
-        {
-
-        }
-
         public int[] MergeSort(int[] _array)
         {
             // create left and right array

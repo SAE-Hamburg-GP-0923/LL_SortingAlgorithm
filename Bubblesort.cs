@@ -1,42 +1,23 @@
 ﻿
 namespace LL_SortingAlgorithm
 {
-    internal class Bubblesort
+    static public class Bubblesort
     {
-        int[] arrayA = new int[10]
+        public static void Sort(this int[] _source)
         {
-            9,
-            3,
-            4,
-            1,
-            16,
-            69,
-            2,
-            42,
-            27,
-            7
-        };
-
-        bool swapNeeded;
-        public Bubblesort()
-        {
-        }
-
-
-        public void Sort()
-        {
+            bool swapNeeded;
             // iterates through entire array aka outer loop
-            for (int i = 0; i < arrayA.Length - 1; i++)
+            for (int i = 0; i < _source.Length - 1; i++)
             {
                 swapNeeded = false;
                 // iterates and compares 2 values next to each other aka inner loop
-                for (int j = 0; j < arrayA.Length - i - 1; j++)
+                for (int j = 0; j < _source.Length - i - 1; j++)
                 {
-                    if (arrayA[j] > arrayA[j + 1])
+                    if (_source[j] > _source[j + 1])
                     {
-                        var tempValue = arrayA[j];
-                        arrayA[j] = arrayA[j + 1];
-                        arrayA[j + 1] = tempValue;
+                        var tempValue = _source[j];
+                        _source[j] = _source[j + 1];
+                        _source[j + 1] = tempValue;
                         swapNeeded = true;
                     }
                 }
