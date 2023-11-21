@@ -64,9 +64,9 @@
                     {
                         // swap values if needed
                         if (_array[_left] == _array[_right]) return _right;
-                        int temp = _array[_left];
+                        int tempVar = _array[_left];
                         _array[_left] = _array[_right];
-                        _array[_right] = temp;
+                        _array[_right] = tempVar;
                     }
                     else
                     {
@@ -186,11 +186,10 @@
         public static void SortZigZag(this int[] _source)
         {
             var tempArray = new int[_source.Length];
-            int rightIndex = _source.Length - 1;
-            for (int i = 0; i < _source.Length; i++)
+            for (int i = 0, x = _source.Length - 1, k = 0; k < x; i += 2, x--, k++)
             {
-                tempArray[i] = _source[i];
-                tempArray[i + 1] = _source[rightIndex - i];
+                tempArray[i] = _source[k];
+                tempArray[i + 1] = _source[x];
             }
             for (int i = 0; i < _source.Length; i++)
             {
@@ -198,9 +197,30 @@
             }
         }
 
-        public static void Decending(this int[] _source)
+        //public static void SortZigZagDoubleFor(this int[] _source)
+        //{
+        //    var indeXRight = _source.Length - 1;
+        //    var tempArray = new int[_source.Length];
+        //    for (int i = 0, k = 0; i < indeXRight; i++, k++)
+        //    {
+        //        tempArray[i] = _source[k];
+        //        for (int x = _source.Length -1; k < x; x--, i++)
+        //        {
+        //            tempArray[i + 1] = _source[x];
+        //            indeXRight = x;
+        //        }
+        //    }
+        //    for (int i = 0; i < _source.Length; i++)
+        //    {
+        //        _source[i] = tempArray[i];
+        //    }
+        //}
+
+        public static void SortDecending(this int[] _source)
         {
-            var tempArray = _source;
+            int[] tempArray = new int[_source.Length];
+            _source.CopyTo(tempArray, 0);
+
             for (int i = 0; i < _source.Length; i++)
             {
                 int tempVar = tempArray[tempArray.Length - 1 - i];
