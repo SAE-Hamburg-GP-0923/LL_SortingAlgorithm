@@ -7,6 +7,7 @@ namespace LL_SortingAlgorithm
 
         static int[] usedArray;
         private static int randomArrayLength = 10;
+        private static ConsoleColor errorColor = ConsoleColor.Red;
 
         static void Main(string[] args)
         {
@@ -25,8 +26,8 @@ namespace LL_SortingAlgorithm
                     usedArray.QuickSort(0, usedArray.Length - 1);
                     break;
             }
-            int printChoice = ChoosePrintMethod(1, 3);
-            switch (printChoice)
+            userChoice = ChoosePrintMethod(1, 3);
+            switch (userChoice)
             {
                 case 1:
                     Console.WriteLine("Du hast Aufsteigend gewählt! Hier ist dein Array:");
@@ -51,18 +52,11 @@ namespace LL_SortingAlgorithm
                 Console.WriteLine("[1] - Aufsteigend");
                 Console.WriteLine("[2] - Absteigend");
                 Console.WriteLine("[3] - Zick-Zack");
-                var userInput = Console.ReadLine();
-                if (int.TryParse(userInput, out int intInput) && intInput >= _minInput && intInput <= _maxInput)
-                {
-                    return intInput;
-                }
-                else
-                {
-                    Console.Clear();
-                    Console.WriteLine("Bitte gebe einen Wert in dem angezeigten Bereich ein!");
-                }
+                var intInput = GetIntInput(_minInput, _maxInput);
+                if (intInput > 0) return intInput;
             }
         }
+
 
         private static int ChooseSortingAlgorithm(int _minInput, int _maxInput)
         {
@@ -72,16 +66,8 @@ namespace LL_SortingAlgorithm
                 Console.WriteLine("[1] - Bubblesort");
                 Console.WriteLine("[2] - Mergesort");
                 Console.WriteLine("[3] - Quicksort");
-                var userInput = Console.ReadLine();
-                if (int.TryParse(userInput, out int intInput) && intInput >= _minInput && intInput <= _maxInput)
-                {
-                    return intInput;
-                }
-                else
-                {
-                    Console.Clear();
-                    Console.WriteLine("Bitte gebe einen Wert in dem angezeigten Bereich ein!");
-                }
+                var intInput = GetIntInput(_minInput, _maxInput);
+                if (intInput > 0) return intInput;
             }
         }
 
@@ -130,36 +116,24 @@ namespace LL_SortingAlgorithm
                 {
                     Console.WriteLine($"Gebe die gewünschte Zahl für die Position {i + 1} ein!");
                     Console.WriteLine($"Die Zahl muss zwischen {_minInput} und {_maxInput} liegen!");
-                    var userInput = Console.ReadLine();
-                    if (int.TryParse(userInput, out int intInput) && intInput >= _minInput && intInput <= _maxInput)
+                    var intInput = GetIntInput(_minInput, _maxInput);
+                    if (intInput > 0)
                     {
                         validInput = true;
                         tempArray[i] = intInput;
-                    }
-                    else
-                    {
-                        Console.Clear();
-                        Console.WriteLine("Bitte gebe einen Wert in dem angezeigten Bereich ein!");
                     }
                 }
             }
             return tempArray;
         }
 
-        private static int[] ChooseArrayLenght(int _min, int _max)
+        private static int[] ChooseArrayLenght(int _minInput, int _maxInput)
         {
             while (true)
             {
-                Console.WriteLine($"Gebe die größe des zu sortierenden Arrays ein! Maximalwert ist {_max}!");
-                var userInput = Console.ReadLine();
-                if (int.TryParse(userInput, out int intInput) && intInput >= _min && intInput <= _max)
-                {
-                    return new int[intInput];
-                }
-                else
-                {
-                    Console.WriteLine("Bitte gebe keinen Wert ein der größer als der Maximalwert oder niedriger als 0 ist!");
-                }
+                Console.WriteLine($"Gebe die Größe des zu sortierenden Arrays ein! Wert muss zwischen {_minInput} und {_maxInput} liegen!");
+                var intInput = GetIntInput(_minInput, _maxInput);
+                if (intInput > 0) return new int[intInput];
             }
         }
 
@@ -174,12 +148,40 @@ namespace LL_SortingAlgorithm
             return randomArray;
         }
 
+        private static int GetIntInput(int _minInput, int _maxInput)
+        {
+            var userInput = Console.ReadLine();
+            if (int.TryParse(userInput, out int intInput) && intInput >= _minInput && intInput <= _maxInput)
+            {
+                return intInput;
+            }
+            else
+            {
+                Console.Clear();
+                ConsoleWriteColorLine("Bitte gebe einen Wert in dem angezeigten Bereich ein!", errorColor);
+                return 0;
+            }
+        }
+
         static void Print()
         {
             foreach (int i in usedArray)
             {
                 Console.Write(i + " ");
             }
+        }
+
+        private static void ConsoleWriteColor(string _output, ConsoleColor _color)
+        {
+            ConsoleColor currentColor = Console.ForegroundColor;
+            Console.ForegroundColor = _color;
+            Console.Write(_output);
+            Console.ForegroundColor = currentColor;
+        }
+
+        private static void ConsoleWriteColorLine(string _output, ConsoleColor _color)
+        {
+            ConsoleWriteColor(_output + "\n", _color);
         }
     }
 }
