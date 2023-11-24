@@ -23,7 +23,7 @@ namespace LL_SortingAlgorithm
                     usedArray.MergeSort();
                     break;
                 case 3:
-                    usedArray.QuickSort(0, usedArray.Length - 1);
+                    usedArray.QuickSort();
                     break;
             }
             userChoice = ChoosePrintMethod(1, 3);
@@ -100,7 +100,7 @@ namespace LL_SortingAlgorithm
 
         private static int[] CreateUserArray()
         {
-            usedArray = ChooseArrayLenght(1, 10);
+            usedArray = ChooseArrayLength(1, 10);
             usedArray = ChooseArrayContent(1, 100);
             return usedArray;
         }
@@ -127,7 +127,7 @@ namespace LL_SortingAlgorithm
             return tempArray;
         }
 
-        private static int[] ChooseArrayLenght(int _minInput, int _maxInput)
+        private static int[] ChooseArrayLength(int _minInput, int _maxInput)
         {
             while (true)
             {
