@@ -173,10 +173,10 @@
             var tempArray = new T[_source.Length];
             for (int i = 0, x = _source.Length - 1, k = 0; i < _source.Length; i++, x--, k++)
             {
-                tempArray[i] = _source[k];
+                tempArray[i] = _source[x];
                 i++;
                 if (i >= _source.Length) break;
-                tempArray[i] = _source[x];
+                tempArray[i] = _source[k];
             }
             for (int i = 0; i < _source.Length; i++)
             {

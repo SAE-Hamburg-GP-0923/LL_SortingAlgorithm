@@ -77,7 +77,7 @@ namespace LL_SortingAlgorithm
             while (!validInput)
             {
 
-                Console.WriteLine("Möchtest du ein eigenes Array anlegen oder ein zufälliges bekommen?");
+                Console.WriteLine("Möchtest du ein eigenes Array anlegen? Ansonsten wird ein zufälliges generiert!");
                 Console.WriteLine("(Y/N)");
                 ConsoleKeyInfo userInput = Console.ReadKey(true);
                 switch (userInput.Key)
